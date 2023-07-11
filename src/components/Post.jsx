@@ -1,4 +1,4 @@
-import styles from "./Post.module";
+import styles from "./Post.module.css";
 
 export function Post() {
   return (
@@ -19,13 +19,25 @@ export function Post() {
       </header>
 
       <div className={styles.content}>
-        
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, eum ab</p>
-          <p>voluptatum nostrum vitae aliquid dicta, reiciendis itaque perferendis</p>
-          <p> <a href=""> soluta numquam earum placeat alias. Reprehenderit deserunt dolore nemo</a></p>
-          <p>laboriosam accusantium.</p>
-        
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, eum ab
+        </p>
+        <p>
+          voluptatum nostrum vitae aliquid dicta, reiciendis itaque perferendis
+        </p>
+        <p>
+          {" "}
+          <a href=""> #programação #CSS #HTML</a>
+        </p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixe seu feedback</strong>
+        <textarea placeholder="Deixe um comentário" />
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
     </article>
   );
 }
