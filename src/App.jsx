@@ -5,19 +5,55 @@ import { Sidebar } from "./components/Sidebar";
 import styles from "./App.module.css";
 import "./global.css";
 
+const posts = [
+  {
+    id: 1,
+    author:{
+      avatarUrl: 'https://github.com/CaioMVargas.png',
+      name: 'Caio Vargas',
+      role: 'Web Developer'
+    },
+    content: [
+      {type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, eum ab'},
+      {type: 'paragraph', content: 'voluptatum nostrum vitae aliquid dicta, reiciendis itaque perferendis'},
+      {type: 'link', content: '#programação #CSS #HTML'},
+    ],
+    publishedAt: new Date('2023-07-07 10:00:00'),
+  },
+  {
+    id: 2,
+    author:{
+      avatarUrl: 'https://github.com/CaioMVargas.png',
+      name: 'Caio Vargas',
+      role: 'Web Developer'
+    },
+    content: [
+      {type: 'paragraph', content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, eum ab',},
+      {type: 'paragraph', content: 'voluptatum nostrum vitae aliquid dicta, reiciendis itaque perferendis',},
+      {type: 'link', content: '#programação #CSS #HTML'},
+    ],
+    publishedAt: new Date('2023-07-08 10:00:00'),
+  },
+];
 
-function App() {
+
+export function App() {
   return (
     <div>
       <Header />
       <div className={styles.wrapper}>
         <Sidebar/>
         <main>
-          <Post
-            author="Diego Fernandes"
-            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime itaque quas corporis beatae veritatis, reprehenderit asperiores vitae quod possimus qui dignissimos unde deleniti consequatur quae, repellat debitis sunt, est rerum!"
+          {posts.map(post => {
+           return (
+           <Post
+            key={post.publishedAt}
+            author={posts.author}
+            content={posts.content}
+            publishedAt={posts.publishedAt}
           />
-          <Post author="Gabriel Buzzi" content="Um novo post muito legal" />
+           )
+          })}
         </main>
       </div>
     </div>
