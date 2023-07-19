@@ -47,7 +47,7 @@ export function App() {
           {posts.map(post => {
            return (
            <Post
-            key={post.publishedAt}
+            key={post.id}
             author={posts.author}
             content={posts.content}
             publishedAt={posts.publishedAt}
